@@ -15,5 +15,3 @@ export default function handleProfileSignup() {
       console.error('Signup system offline');
     });
 }
-
-handleProfileSignup();
