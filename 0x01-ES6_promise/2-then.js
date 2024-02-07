@@ -4,16 +4,18 @@ function handleResponseFromAPI(promise) {
       console.log('Got a response from the API');
       return {
         status: 200,
-        body: 'success'
+        body: 'success',
       };
     })
     .then((secondResolvedValue) => {
       console.log('Got a response from the API');
+      return secondResolvedValue;
     })
     .then((thirdResolvedValue) => {
       console.log('Got a response from the API');
+      return thirdResolvedValue;
     })
-    .catch((error) => {
+    .catch(() => {
       console.log('Got a response from the API');
       return new Error();
     });
