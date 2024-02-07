@@ -4,18 +4,18 @@ export default function createIteratorObject(report) {
   let currentEmployeeIndex = 0;
 
   return {
-    [Symbol.iterator]: function* () {
+    * [Symbol.iterator]() {
       while (currentDepartmentIndex < departments.length) {
         const currentDepartment = departments[currentDepartmentIndex];
-        const employees = currentDepartment; // This line might be the issue
+        const employees = currentDepartment;
 
         while (currentEmployeeIndex < employees.length) {
           yield employees[currentEmployeeIndex];
-          currentEmployeeIndex++;
+          currentEmployeeIndex += 1;
         }
 
         currentEmployeeIndex = 0;
-        currentDepartmentIndex++;
+        currentDepartmentIndex += 1;
       }
     },
   };
