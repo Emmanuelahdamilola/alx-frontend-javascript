@@ -1,7 +1,7 @@
 import signUpUser from './4-user-promise';
 import uploadPhoto from './5-photo-reject';
 
-async function handleProfileSignup(firstName, lastName, fileName) {
+export default async function handleProfileSignup(firstName, lastName, fileName) {
   try {
     // Using Promise.allSettled to handle both promises concurrently
     const [userResult, photoResult] = await Promise.allSettled([
@@ -21,5 +21,3 @@ async function handleProfileSignup(firstName, lastName, fileName) {
     return [{ status: 'rejected', value: error.message }];
   }
 }
-
-export default handleProfileSignup;
