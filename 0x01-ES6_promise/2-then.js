@@ -1,18 +1,20 @@
 function handleResponseFromAPI(promise) {
-  promise
+  return promise
     .then(() => {
       console.log('Got a response from the API');
       return {
         status: 200,
-        body: 'success',
+        body: 'success'
       };
     })
-    .then((data) => {
-      console.log('Resolved:', data);
+    .then((secondResolvedValue) => {
+      console.log('Got a response from the API');
+    })
+    .then((thirdResolvedValue) => {
+      console.log('Got a response from the API');
     })
     .catch((error) => {
-      console.error('Got a response from the API');
-      console.error('Rejected:', error);
+      console.log('Got a response from the API');
       return new Error();
     });
 }
